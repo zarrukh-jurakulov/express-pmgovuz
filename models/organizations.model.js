@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const OrganizationSchema = new mongoose.Schema({
   logo_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Images",
+    ref: 'Images',
   },
   name_uz: {
     type: String,
@@ -19,12 +19,12 @@ const OrganizationSchema = new mongoose.Schema({
   },
   org_category_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "OrgCategory",
+    ref: 'OrgCategory',
     required: true,
   },
   parent_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Organization",
+    ref: 'Organization',
     required: false,
   },
   is_active: {
@@ -35,13 +35,13 @@ const OrganizationSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  reigion_id: {
+  region_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Regions",
+    ref: 'Regions',
   },
   district_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Districts",
+    ref: 'Districts',
   },
   created_at: {
     type: Date,
@@ -53,4 +53,6 @@ const OrganizationSchema = new mongoose.Schema({
   },
 });
 
-module.exports = OrganizationSchema;
+const OrganizationModel = mongoose.model('Organization', OrganizationSchema);
+
+module.exports = OrganizationModel;

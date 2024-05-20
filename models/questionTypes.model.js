@@ -1,6 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const QuestionTypesSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
   name_uz: {
     type: String,
     required: true,

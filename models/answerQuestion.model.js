@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const AnswerQuestionSchema = new mongoose.Schema({
   id: {
@@ -31,7 +31,7 @@ const AnswerQuestionSchema = new mongoose.Schema({
   },
   question_type_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "QuestionTypes",
+    ref: 'QuestionTypes',
     required: true,
   },
   created_at: {
@@ -43,3 +43,5 @@ const AnswerQuestionSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
+
+module.exports = AnswerQuestionSchema;
