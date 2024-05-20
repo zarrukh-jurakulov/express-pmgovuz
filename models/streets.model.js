@@ -1,10 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const StreetsListSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
+const StreetsSchema = new mongoose.Schema({
   name_uz: {
     type: String,
     required: true,
@@ -19,14 +15,16 @@ const StreetsListSchema = new mongoose.Schema({
   },
   region_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Regions",
+    ref: 'Region',
     required: true,
   },
   district_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Districts",
+    ref: 'District',
     required: true,
   },
 });
 
-module.exports = StreetsListSchema;
+const StreetsModel = mongoose.model('Street', StreetsSchema);
+
+module.exports = StreetsModel;

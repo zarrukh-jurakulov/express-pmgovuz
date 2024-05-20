@@ -1,10 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const DistrictsSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   name_uz: {
     type: String,
     required: true,
@@ -19,9 +15,11 @@ const DistrictsSchema = new mongoose.Schema({
   },
   region_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Regions",
+    ref: 'Region',
     required: true,
   },
 });
 
-module.exports = DistrictsSchema;
+const DistrictsModel = mongoose.model('District', DistrictsSchema);
+
+module.exports = DistrictsModel;

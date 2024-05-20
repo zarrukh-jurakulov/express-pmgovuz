@@ -1,10 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const RegionsSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   name_uz: {
     type: String,
     required: true,
@@ -19,4 +15,6 @@ const RegionsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = RegionsSchema;
+const RegionsModel = mongoose.model('Region', RegionsSchema);
+
+module.exports = RegionsModel;

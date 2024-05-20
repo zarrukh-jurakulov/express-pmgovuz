@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const QuestionTypesSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   name_uz: {
     type: String,
     required: true,
@@ -31,4 +27,6 @@ const QuestionTypesSchema = new mongoose.Schema({
   },
 });
 
-module.exports = QuestionTypesSchema;
+const QuestionTypesModel = mongoose.model('QuestionType', QuestionTypesSchema);
+
+module.exports = QuestionTypesModel;

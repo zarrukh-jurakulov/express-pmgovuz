@@ -47,7 +47,7 @@ const deleteOrganization = async (req, res) => {
   const id = req.params.id;
   try {
     const org = await OrganizationModel.findByIdAndDelete(id);
-    res.send(org);
+    await res.send(org);
   } catch (error) {
     res.status(500).send(error);
   }

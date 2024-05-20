@@ -25,7 +25,6 @@ const OrganizationSchema = new mongoose.Schema({
   parent_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Organization',
-    required: false,
   },
   is_active: {
     type: Boolean,
@@ -33,7 +32,7 @@ const OrganizationSchema = new mongoose.Schema({
   },
   is_send_request: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   region_id: {
     type: mongoose.Schema.Types.ObjectId,
@@ -42,14 +41,6 @@ const OrganizationSchema = new mongoose.Schema({
   district_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Districts',
-  },
-  created_at: {
-    type: Date,
-    default: Date.now,
-  },
-  updated_at: {
-    type: Date,
-    default: Date.now,
   },
 });
 
